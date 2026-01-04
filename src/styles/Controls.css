@@ -1,0 +1,36 @@
+.controls-container {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 20;
+    transition: opacity 0.5s ease;
+}
+
+.controls-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.control-btn svg {
+    opacity: 0.8;
+}
