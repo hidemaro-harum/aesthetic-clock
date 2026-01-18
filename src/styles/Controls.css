@@ -4,6 +4,10 @@
     right: 2rem;
     z-index: 20;
     transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
 }
 
 .controls-container.hidden {
@@ -33,4 +37,38 @@
 
 .control-btn svg {
     opacity: 0.8;
+}
+
+.control-toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.control-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.control-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.control-toggle.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.35);
 }

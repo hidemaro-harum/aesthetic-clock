@@ -9,6 +9,8 @@ import './styles/animations.css';
 const AppContent = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isUiVisible, setIsUiVisible] = useState(true);
+  const [is24Hour, setIs24Hour] = useState(true);
+  const [showSeconds, setShowSeconds] = useState(true);
   const timeoutRef = useRef(null);
 
   // Parallax effect logic
@@ -57,8 +59,14 @@ const AppContent = () => {
   return (
     <div className="app-container" style={backgroundStyle}>
       <div className="aurora-layer"></div>
-      <Controls isVisible={isUiVisible} />
-      <Clock />
+      <Controls
+        isVisible={isUiVisible}
+        is24Hour={is24Hour}
+        showSeconds={showSeconds}
+        onToggle24Hour={() => setIs24Hour((prev) => !prev)}
+        onToggleSeconds={() => setShowSeconds((prev) => !prev)}
+      />
+      <Clock is24Hour={is24Hour} showSeconds={showSeconds} />
       <div className={`theme-switcher-wrapper ${!isUiVisible ? 'hidden' : ''}`}>
         <ThemeSwitcher />
       </div>

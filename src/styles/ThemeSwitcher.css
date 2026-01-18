@@ -34,6 +34,13 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
+.theme-btn:focus-visible {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+    outline: none;
+}
+
 .theme-btn.active {
     opacity: 1;
     background: rgba(255, 255, 255, 0.2);
